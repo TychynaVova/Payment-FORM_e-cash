@@ -1,0 +1,370 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Calibri';
+  src: url('../fonts/Calibri.eot');
+  src: local('☺'), url('../fonts/Calibri.woff') format('woff'), 
+  url('../fonts/Calibri.ttf') format('truetype'), 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Password';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/password.ttf") format("truetype"); }
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html ,body{
+  font-family: 'Calibri', sans-serif;
+  font-size: 12px;
+  color: #3c4448;
+  min-width: 100%;
+  height: 100%;
+  height: auto;
+  min-height: 100%;
+}
+input {
+  outline: none;
+}
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  overflow: hidden;
+}
+.header {
+  background-color: transparent;
+  height: 100px;
+  width: 930px;
+  margin: 0 auto;
+}
+.logo {
+  width: 183px;
+  height: 53px;
+  margin-top: 20px;
+}
+.content {
+  max-width: 930px;
+  margin: 0 auto;
+}
+.p_page  {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  position: relative;
+}
+h1 {
+  font-weight: bold;
+  font-size: 23px;
+  color: #2a3134;
+}
+.notice {
+  font-size: 16px;
+  color: #878e91;
+}
+.info {
+  font-weight: bold;
+  font-size: 15px;
+  color: #2260a8;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.company {
+  width: 78px;
+  display: inline-block;
+}
+.company_name {
+  width: 53px;
+  display: inline-block;
+}
+.discription {
+  width: 105px;
+  display: inline-block;
+}
+.value {
+  width: auto;
+  display: inline-block;  
+}
+.information {
+  height: 26px;
+  font-size: 16px;
+  color: #575757;
+  margin-bottom: 30px;
+}
+.information img {
+  width: 24px;
+  line-height: 26px;
+  margin-right: 15px;
+  float: left;
+}
+.label {
+  display: block;
+  line-height: 26px;
+}
+.card {
+  display: block;
+  height: 325px;
+  position: relative;
+}
+.card_top {
+  width: 447px;
+  height: 228px;
+  display: block;
+  float: left;
+  background-color: #1b86e8;
+  border-radius: 15px;
+  position: relative;
+}
+.card_bg {
+  width: 447px;
+  height: 228px;
+  display: block;
+  float: right;
+  background-color: #1b86e8;
+  border-radius: 15px;
+  position: relative;
+}
+.numbercard,
+.datecard {
+  display: block;
+  width: 400px;
+  margin-top: 60px;
+  margin-left: 23px;
+  font-size: 15px;
+  color: #3d3d3d;
+}
+.datecard {
+  margin-top: 20px;
+  height: 47px;
+}
+#card_num,
+#card_exp_month,
+#card_exp_year {
+  width: 370px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  height: 44px;
+  line-height: 44px;
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 0 15px;
+  color: #3d3d3d;
+}
+input[type=tel],
+input[type=password] {
+  font-size: 15px;
+}
+.mps {
+  position: absolute;
+  width: 45px;
+  height: 30px;
+  top: 68px;
+  left: 370px;
+}
+.cards img{
+  display: block;
+  width: 45px;
+  height: 30px;
+  top: 68px;
+  left: 370px;
+  background: url(../images/card.png) no-repeat;
+}
+.cards.hide {
+  display: none;
+}
+.cards.show {
+  display: block;
+}
+.payment__card {
+  position: absolute;
+  width: 45px;
+  height: 30px;
+  top: 68px;
+  left: 370px;
+}
+.visa img{
+  display: none;
+  width: 52px;
+  height: 45px;
+  margin-top: -8px;
+  margin-left: -4px;
+}
+.visa.show img{
+  display: block;
+}
+.mastercard img{
+  display: none;
+  width: 52px;
+  height: 45px;
+  margin-top: -8px;
+  margin-left: -4px
+}
+.mastercard.show img{
+  display: block;
+}
+.maestro img {
+  display: none;
+  width: 60px;
+  height: 43px;
+  margin-top: -7px;
+  margin-left: -8px;
+}
+.maestro.show img {
+  display: block;
+}
+
+#card_exp_month {
+  width: 156px;
+  float: left;
+}
+#card_exp_year {
+  width: 156px;
+  float: right;
+}
+#datecard {
+  display: block;
+  margin-left: 8px;
+  width: 10px;
+  float: left;
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  font-size: 18px;
+}
+.line_bg {
+  background-color: #000;
+  height: 55px;
+  margin-top: 50px;
+}
+.cod {
+  height: 55px;
+  margin-top: 18px;
+  background-color: #499eed;
+}
+#cvv {
+  font-family: 'Password';
+  width: 95px;
+  height: 40px;
+  text-align: center;
+  float: right;
+  margin-right: 25px;
+  margin-top: 7px;
+  line-height: 55px;
+  border: none;
+}
+.cod span {
+  color: #3d3d3d;
+  font-size: 15px;
+  float: right;
+  margin-right: 15px;
+  line-height: 55px;
+}
+#button {
+  width: 165px;
+  height: 45px;
+  line-height: 45px;
+  margin-top: 50px;
+  margin-bottom: 58px;
+  margin-left: 41%;
+  display: inline-block;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  background-color: #74b02c;
+}
+@media(max-width: 768px) {
+  #button {
+    margin-left: 38%;}
+}
+@media(max-width: 610px) {
+  #button {
+    margin-left: 31%;}
+}
+@media(max-width: 440px) {
+  #button {
+    margin-left: 28%;}
+}
+@media(max-width: 370px) {
+  #button {
+    margin-left: 24%;}
+}
+#button:hover {
+  cursor: pointer;
+  -webkit-transition: .3s ease-out 0.1s;
+  -moz-transition: .3s ease-out 0.1s;
+  -o-transition: .3s ease-out 0.1s;
+  transition: .3s ease-out 0.1s;
+  background-color: #74b02cc7;
+}
+#button:active {
+  background-color: #74b02cc7;
+}
+.support {
+  display: block;
+  width: 50%;
+  height: 180px;
+  float: left;
+  font-size: 14px;
+  margin-top: 58px;
+}
+.logo_mps {
+  display: block;
+  width: 50%;
+  height: 180px;
+  float: left;
+  font-size: 14px;
+  margin-top: 58px;
+}
+.logo_mps img {
+  margin-top: 50px;
+  float: right;
+}
+#mc {
+  width: 68px;
+  margin-left: 16px;
+  margin-top: 41px;
+}
+#visa {
+  width: 80px;
+  margin-left: 16px;
+  margin-top: 42px;
+}
+#v_sc {
+  width: 64px;
+  margin-top: 42px;
+  margin-left: 16px;
+}
+#mc_sc {
+  width:75px;
+}
+label.error {
+  position: absolute;
+  background: none;
+  color: white;
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  -webkit-text-decoration-color: red;
+  width: 95px;
+  margin-right: 20px;
+}
+#card_num-error {
+  width: 400px;
+  font-size: 12px;
+}
+#cardexp-error {
+  left: 22px;
+  width: 400px;
+}
+#cvv-error {
+  right: 5px;
+  top: 170px;
+}

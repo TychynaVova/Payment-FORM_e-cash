@@ -1,0 +1,50 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Calibri';
+  src: url('../fonts/Calibri.eot');
+  src: local('☺'), url('../fonts/Calibri.woff') format('woff'), url('../fonts/Calibri.ttf') format('truetype'), url('../fonts/Calibri.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  width: 95%;
+}
+.content {
+  width: 95%;
+}
+.card_top {
+  z-index: 2;
+}
+.numbercard {
+  margin-top: 0px;
+}
+.datecard {
+  margin-top: 38px;
+}
+#card_exp_month,
+#card_exp_year {
+  margin-top: 0;
+}
+.mps {
+  top: 46px;
+}
+.card_bg {
+  margin-top: -134px;
+  z-index: 1;
+}
+input {
+  margin-top: 38px;
+}
+.logo_mps,
+.support {
+  margin-top: 110px;
+}
+#mc,
+#visa,
+#v_sc {
+  margin-left: 1px;
+}
+#cardexp-error {
+  top: 168px;
+}

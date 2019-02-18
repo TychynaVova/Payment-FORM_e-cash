@@ -1,0 +1,142 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Calibri';
+  src: url('../fonts/Calibri.eot');
+  src: local('☺'), url('../fonts/Calibri.woff') format('woff'), url('../fonts/Calibri.ttf') format('truetype'), url('../fonts/Calibri.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header,
+.content {
+  width: 90%;
+}
+.header {
+  display: flex;
+  justify-content: center;
+}
+.header img {
+  align-self:center;
+}
+.p_page {
+  margin-top: 0px;
+}
+.notice {
+  margin-top: 5px;
+  font-size: 12px
+}
+.info {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+.company {
+  width: 58px;
+}
+.company_name {
+  width: 40px;
+}
+.discription {
+  width: 80px;
+}
+.information {
+  height: 20px;
+  margin-bottom: 20px;
+}
+.information img {
+  width: 20px;
+}
+.label {
+  line-height: 20px;
+}
+.card {
+  height: auto;
+}
+.card_top,
+.card_bg {
+  width: 100%;
+  height: 200px;
+}
+.card_top {
+  margin-bottom: 20px;
+}
+.numbercard {
+  width: 90%;
+  margin: 20px auto;
+}
+.datecard {
+  width: 90%;
+  margin: 20px auto;
+  margin-top: 40px;
+}
+#card_num {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  padding-left: 5px;
+  margin-left: -5px;
+}
+.mps {
+  top: 28px;
+  float: right;
+  margin-right: 5px;
+  right: 25px;
+  left: auto;
+}
+#card_exp_month,
+#card_exp_year {
+  width: 45%;
+  float: left;
+}
+#card_exp_month {
+  padding: 0;
+  padding-left: 5px;
+  margin-left: -5px;
+}
+#datecard {
+  width: 7%;
+  margin-left: 0px;
+  padding-right: 3px;
+  float: left;
+  text-align: center;
+}
+@media(max-width: 494px){
+  #datecard {
+    width: 5%;
+  }
+}
+#card_exp_year {
+  padding: 0;
+  float: right;
+  padding-left: 5px;
+  margin-left: -5px;
+  padding-right: 5px;
+}
+.line_bg {
+  margin: 20px auto;
+}
+.cod {
+  margin-bottom: 20px;
+}
+button {
+  width: 100%;
+  margin: 20px auto 40px auto;
+}
+.support,
+.logo_mps {
+  width: 100%;
+  margin-top: 0;
+  height: auto;
+}
+#mc,
+#visa,
+#v_sc {
+margin-left: 0px;
+}
+#cardexp-error {
+  top: 150px;
+  left: 18px;
+}
+#cvv-error {
+ top: 142px
+}

